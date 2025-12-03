@@ -5,14 +5,8 @@ export default defineConfig({
   plugins: [react()],
   base: '/',
   build: {
-    // Optimisation pour la production
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true, // Supprime les console.log en prod
-        drop_debugger: true
-      }
-    },
+    // Utilise esbuild (inclus par défaut) pour la minification
+    minify: 'esbuild',
     // Split chunks pour de meilleures performances
     rollupOptions: {
       output: {
@@ -24,5 +18,8 @@ export default defineConfig({
     },
     // Taille limite avant avertissement
     chunkSizeWarningLimit: 1000
+  },
+  esbuild: {
+    drop: ['console', 'debugger'] // Supprime console.log et debugger en prod
   }
 })
