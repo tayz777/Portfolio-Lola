@@ -73,7 +73,7 @@ export default function PortfolioDetails() {
               <div className="project-block__phone">
                 <IphoneMockup src="/joseph.jpg" alt="Reel Joseph" />
               </div>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="project-block__reel-link">
+              <a href="/https://www.instagram.com/p/DIlNYD9MCPn/?img_index=5" target="_blank" rel="noopener noreferrer" className="project-block__reel-link">
                 Cliquez ici pour accéder au reel
               </a>
             </div>
