@@ -1,0 +1,7 @@
+# Robots.txt pour Lola Facello Portfolio
+User-agent: *
+Allow: /
+
+# Sitemap (optionnel - à ajouter si tu en crées un)
+# Sitemap: https://ton-domaine.vercel.app/sitemap.xml
+

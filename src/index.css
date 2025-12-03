@@ -1,0 +1,260 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========== Reset et base - Mobile First ========== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Palette Lola Facello - Design Canva */
+  --color-burgundy: #64041b;
+  --color-burgundy-dark: #64041b;
+  --color-pink: #e8b4bc;
+  --color-pink-soft: #f0c8ce;
+  --color-pink-bg: #f2c4cb;
+  --color-cream: #f5efe6;
+  --color-beige: #faf5ef;
+  --color-turquoise: #2abfb3;
+  --color-text-dark: #6b2d3b;
+  --color-text-light: #faf5ef;
+  
+  /* Typography */
+  --font-handwriting: 'Caveat', cursive;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  
+  /* Spacing - Mobile first */
+  --section-padding: clamp(1.5rem, 5vw, 6rem);
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg-dark);
+  color: var(--color-text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Container pour les sections fullpage avec superposition */
+.portfolio-container {
+  position: relative;
+}
+
+/* Section fullpage de base - Mobile first */
+.section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sections avec contenu long - pas de centrage vertical */
+.section.services-details,
+.section.portfolio-details {
+  align-items: flex-start;
+  min-height: auto;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* Ombre portée pour effet de profondeur sur les sections */
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.25), transparent);
+  pointer-events: none;
+  opacity: 0;
+  z-index: 100;
+}
+
+.section-card-container:not(:first-child) .section::before {
+  opacity: 1;
+}
+
+/* Typographie - Mobile first */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 10vw, 10rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 6vw, 4.5rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 4vw, 2.5rem);
+}
+
+p {
+  font-size: clamp(0.95rem, 3vw, 1.25rem);
+  font-weight: 300;
+}
+
+/* Boutons - Mobile first */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btn--primary {
+  background: var(--color-bg-cream);
+  color: var(--color-coral);
+}
+
+.btn--primary:hover {
+  background: var(--color-pink-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(245, 181, 181, 0.3);
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-text-light);
+  border: 1px solid var(--color-text-light);
+}
+
+.btn--outline:hover {
+  background: var(--color-text-light);
+  color: var(--color-bg-dark);
+}
+
+/* Animations d'entrée */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Délais d'animation */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-burgundy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-pink);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-turquoise);
+}
+
+/* ========== Tablet ========== */
+@media (min-width: 600px) {
+  :root {
+    --section-padding: clamp(2rem, 5vw, 6rem);
+  }
+  
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+}
+
+/* ========== Desktop ========== */
+@media (min-width: 769px) {
+  h1 {
+    font-size: clamp(3rem, 12vw, 10rem);
+  }
+  
+  h2 {
+    font-size: clamp(2rem, 6vw, 4.5rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  
+  p {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+  }
+  
+  .btn {
+    padding: 1rem 2.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+}

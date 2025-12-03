@@ -1,0 +1,10 @@
+/* Container de section */
+.section-card-container {
+  position: relative;
+}
+
+/* La carte section */
+.section-card {
+  width: 100%;
+}
+

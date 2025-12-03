@@ -1,0 +1,239 @@
+/* ========== CONTACT - Mobile First ========== */
+.contact {
+  background: var(--color-burgundy);
+  color: var(--color-text-light);
+  overflow: hidden;
+}
+
+/* Mobile (base styles) */
+.contact__container {
+  width: 100%;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  order: 2;
+}
+
+.contact__title {
+  font-family: var(--font-body);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--color-cream);
+  line-height: 1.2;
+}
+
+.contact__title--pink {
+  font-family: var(--font-handwriting);
+  font-size: 2.8rem;
+  color: var(--color-pink);
+  font-weight: 400;
+  display: block;
+  margin-left: 0.5rem;
+}
+
+.contact__info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.contact__info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.contact__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-cream);
+  opacity: 0.9;
+}
+
+.contact__link {
+  color: var(--color-cream);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.contact__link:hover {
+  color: var(--color-pink);
+}
+
+.contact__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.contact__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.5rem;
+  background: var(--color-pink);
+  color: var(--color-burgundy);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.contact__btn:hover {
+  background: var(--color-cream);
+  transform: translateY(-2px);
+}
+
+.contact__socials {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.contact__social {
+  color: var(--color-pink);
+  transition: opacity 0.3s ease;
+}
+
+.contact__social:hover {
+  opacity: 0.7;
+}
+
+.contact__social svg {
+  width: 24px;
+  height: 24px;
+}
+
+.contact__image {
+  order: 1;
+  width: 100%;
+}
+
+.contact__image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.contact__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.7rem;
+  color: rgba(250, 245, 239, 0.5);
+}
+
+.contact__footer p {
+  margin: 0;
+}
+
+/* ========== Tablet (min-width: 600px) ========== */
+@media (min-width: 600px) {
+  .contact__container {
+    padding: 3rem 2rem;
+    gap: 2rem;
+  }
+  
+  .contact__title {
+    font-size: 2.5rem;
+  }
+  
+  .contact__title--pink {
+    font-size: 3.5rem;
+  }
+  
+  .contact__image img {
+    height: 300px;
+  }
+  
+  .contact__social svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* ========== Desktop (min-width: 901px) ========== */
+@media (min-width: 901px) {
+  .contact__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+  }
+  
+  .contact__content {
+    order: 1;
+    gap: 1.5rem;
+    padding: 4rem;
+    padding-left: clamp(4rem, 8vw, 8rem);
+    justify-content: center;
+  }
+  
+  .contact__title {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+  }
+  
+  .contact__title--pink {
+    font-size: clamp(3.5rem, 5vw, 5rem);
+    margin-left: 1.5rem;
+  }
+  
+  .contact__info {
+    gap: 1.2rem;
+    margin: 1rem 0;
+  }
+  
+  .contact__label {
+    font-size: 0.75rem;
+  }
+  
+  .contact__link {
+    font-size: 1.05rem;
+  }
+  
+  .contact__actions {
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .contact__btn {
+    padding: 1rem 2rem;
+    font-size: 0.8rem;
+  }
+  
+  .contact__social svg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .contact__image {
+    order: 2;
+  }
+  
+  .contact__image img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center top;
+  }
+}

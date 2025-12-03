@@ -1,0 +1,9 @@
+/* App container */
+.app {
+  min-height: 100vh;
+}
+
+.portfolio-container {
+  position: relative;
+}
+
