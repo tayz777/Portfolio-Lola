@@ -175,10 +175,6 @@
   display: none;
 }
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(5px); }
-}
 
 .project-block__reel-link {
   font-family: var(--font-handwriting);
@@ -321,7 +317,6 @@
     display: block;
     font-size: 2rem;
     color: var(--color-burgundy);
-    animation: bounce 1s infinite;
     margin-left: 70px;
     margin-bottom: 0;
   }
