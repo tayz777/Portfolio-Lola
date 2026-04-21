@@ -79,7 +79,7 @@ export default function Portfolio() {
             <div className="project-block__content">
               <div className="project-block__images project-block__images--grid">
                 <img src="/glacon.jpg" alt="Post 1" className="project-img project-img--small" />
-                <img src="/sofa.jpg" alt="Post 2" className="project-img project-img--small" />
+                <img src="/thumbnail.png" alt="Post 2" className="project-img project-img--small" />
                 <img src="/joseph.jpg" alt="Post 3" className="project-img project-img--small" />
               </div>
               <div className="project-block__reel">

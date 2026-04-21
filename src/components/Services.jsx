@@ -52,7 +52,7 @@ export default function Services() {
               <h3 className="service-block__title service-block__title--underline">Mes services</h3>
               <ul className="service-block__list">
                 <li>Flyers — <span>55 €</span></li>
-                <li>Présentation de services — <span>60 €</span></li>
+                <li>Grille tarifaire — <span>60 €</span></li>
                 <li>Menu — <span>80 €</span></li>
                 <li>Charte graphique — <span>90 €</span></li>
                 <li>Carte de visite — <span>50 €</span></li>

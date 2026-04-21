@@ -49,7 +49,7 @@ export default function ServicesDetails() {
                 <span className="price-row__amount">55 €</span>
               </div>
               <div className="price-row">
-                <span className="price-row__name">Présentation de services</span>
+                <span className="price-row__name">Grille tarifaire</span>
                 <span className="price-row__dots"></span>
                 <span className="price-row__amount">60 €</span>
               </div>
