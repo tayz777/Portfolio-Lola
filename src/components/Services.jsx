@@ -4,16 +4,6 @@ import IphoneMockup from './IphoneMockup'
 export default function Services() {
   return (
     <>
-      {/* Section titre Services avec image fond */}
-      <section className="section section--sticky services-header">
-        <div className="services-header__bg">
-          <img src="/sofa.jpg" alt="" className="services-header__bg-image" />
-          <div className="services-header__overlay"></div>
-        </div>
-        <div className="services-header__content">
-          <h2 className="services-header__title">Services</h2>
-        </div>
-      </section>
 
       {/* Section détails des services */}
       <section className="section section--sticky services-details">
@@ -59,7 +49,7 @@ export default function Services() {
           {/* Créations graphiques */}
           <div className="service-block service-block--graphic">
             <div className="service-block__content2">
-              <h3 className="service-block__title service-block__title--underline">Grille tarifaire</h3>
+              <h3 className="service-block__title service-block__title--underline">Mes services</h3>
               <ul className="service-block__list">
                 <li>Flyers — <span>55 €</span></li>
                 <li>Présentation de services — <span>60 €</span></li>
@@ -72,9 +62,6 @@ export default function Services() {
               </p>
             </div>
             <div className="service-block__image service-block__image--cards">
-              <div className="cards-stack">
-                <img src="/card-for-clients.png" alt="Carte Facello" />
-              </div>
             </div>
           </div>
 

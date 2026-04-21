@@ -5,63 +5,70 @@ export default function ServicesDetails() {
   return (
     <div className="section services-details">
       <div className="services-details__container">
-        
+
+        <h2 className="services-details__main-title">Mes services</h2>
+
         {/* Community Management */}
         <div className="service-block service-block--cm">
           <div className="service-block__content">
             <h3 className="service-block__title">Community Management</h3>
-            <ul className="service-block__list">
-              <li>Story — <span>10 €</span></li>
-              <li>Post — <span>20 €</span></li>
-              <li>Reel — <span>40 €</span></li>
-            </ul>
+            <div className="price-table">
+              <div className="price-row">
+                <span className="price-row__name">Story</span>
+                <span className="price-row__dots"></span>
+                <span className="price-row__amount">10€</span>
+              </div>
+              <div className="price-row">
+                <span className="price-row__name">Post</span>
+                <span className="price-row__dots"></span>
+                <span className="price-row__amount">20€</span>
+              </div>
+              <div className="price-row">
+                <span className="price-row__name">Reel</span>
+                <span className="price-row__dots"></span>
+                <span className="price-row__amount">40€</span>
+              </div>
+            </div>
+            <p className="service-block__note">
+              <em>Nous créons une stratégie adaptée à vos besoins, avec le nombre de publications de votre choix, hebdomadaire ou mensuel.</em>
+            </p>
           </div>
           <div className="service-block__image">
             <IphoneMockup src="/img.jpg" alt="Feed Instagram" />
           </div>
         </div>
 
-        {/* Consulting & Shooting */}
-        <div className="service-row">
-          <div className="service-block service-block--small">
-            <h3 className="service-block__title">Consulting Réseaux<br/>& Stratégie</h3>
-            <ul className="service-block__list">
-              <li>Consulting réseaux sociaux — <span>80 €</span></li>
-              <li>Suivi mensuel — <span>+40€ / mois</span></li>
-            </ul>
-          </div>
-          
-          <div className="service-block service-block--small">
-            <h3 className="service-block__title">Shooting & Création<br/>de contenu</h3>
-            <ul className="service-block__list">
-              <li>Starter — <span>à partir de 30 €</span></li>
-            </ul>
-            <p className="service-block__note">
-              <em>(Tarif ajusté selon le type et la quantité de contenu à réaliser)</em>
-            </p>
-          </div>
-          
-        </div>
-
         {/* Créations graphiques */}
         <div className="service-block service-block--graphic">
-          <div className="service-block__content2">
-            <h3 className="service-block__title service-block__title--underline">Grille tarifaire</h3>
-            <ul className="service-block__list">
-              <li>Flyers — <span>55 €</span></li>
-              <li>Présentation de services — <span>60 €</span></li>
-              <li>Menu — <span>80 €</span></li>
-              <li>Charte graphique — <span>90 €</span></li>
-              <li>Carte de visite — <span>50 €</span></li>
-            </ul>
+          <div className="service-block__content service-block__content--graphic">
+            <h3 className="service-block__title">Créations graphiques</h3>
+            <div className="price-table">
+              <div className="price-row">
+                <span className="price-row__name">Flyers</span>
+                <span className="price-row__dots"></span>
+                <span className="price-row__amount">55 €</span>
+              </div>
+              <div className="price-row">
+                <span className="price-row__name">Présentation de services</span>
+                <span className="price-row__dots"></span>
+                <span className="price-row__amount">60 €</span>
+              </div>
+              <div className="price-row">
+                <span className="price-row__name">Charte graphique</span>
+                <span className="price-row__dots"></span>
+                <span className="price-row__amount">70 €</span>
+              </div>
+              <div className="price-row">
+                <span className="price-row__name">Carte de visite</span>
+                <span className="price-row__dots"></span>
+                <span className="price-row__amount">50 €</span>
+              </div>
+            </div>
             <p className="service-block__note">
               <em>(Pour toutes les créations graphiques, vous disposez d'une modification gratuite après le résultat final.)</em>
             </p>
           </div>
           <div className="service-block__image service-block__image--cards">
-            <div className="cards-stack">
-              <img src="/card-for-clients.png" alt="Carte Facello" />
-            </div>
           </div>
         </div>
 

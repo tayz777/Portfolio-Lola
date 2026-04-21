@@ -13,23 +13,19 @@ export default function PackSection() {
             <p><strong>Ce pack comprend :</strong></p>
             
             <p>
-              <strong className="pack-highlight">Consulting réseaux :</strong> on définit ensemble votre stratégie et vos 
-              idées de contenu
+              <strong className="pack-highlight">Consulting réseaux sociaux :</strong> nous définissons ensemble votre stratégie et vos idées de contenu.
             </p>
             
             <p>
-              <strong className="pack-highlight">Shooting photo/vidéo :</strong> on crée des visuels adaptés à votre univers 
-              et à vos besoins
+              <strong className="pack-highlight">Shooting photo/vidéo :</strong> nous créons des visuels adaptés à votre univers et à vos besoins.
             </p>
             
             <p>
-              <strong className="pack-highlight">Accompagnement personnalisé :</strong> nous évaluons ensemble le 
-              volume de contenu et la durée de shooting pour que le prix final 
-              corresponde exactement à ce dont vous avez besoin
+              <strong className="pack-highlight">Accompagnement personnalisé :</strong> nous évaluons ensemble le volume de contenu et la durée de shooting pour que le prix final corresponde exactement à ce dont vous avez besoin.
             </p>
             
             <p className="pack-section__note">
-              <em>(le prix peut évoluer selon le temps de shooting)</em>
+              <em>(Le prix peut évoluer selon le temps de shooting.)</em>
             </p>
           </div>
         </div>

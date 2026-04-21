@@ -1,7 +1,5 @@
 import SectionCard from './components/SectionCard'
 import Hero from './components/Hero'
-import About from './components/About'
-import ServicesHeader from './components/ServicesHeader'
 import ServicesDetails from './components/ServicesDetails'
 import PackSection from './components/PackSection'
 import PortfolioHeader from './components/PortfolioHeader'
@@ -13,8 +11,6 @@ import './App.css'
 // autoHeight: true pour les sections avec beaucoup de contenu
 const sections = [
   { id: 'hero', Component: Hero },
-  { id: 'about', Component: About },
-  { id: 'services-header', Component: ServicesHeader },
   { id: 'services-details', Component: ServicesDetails, autoHeight: true },
   { id: 'pack', Component: PackSection },
   { id: 'portfolio-header', Component: PortfolioHeader },
