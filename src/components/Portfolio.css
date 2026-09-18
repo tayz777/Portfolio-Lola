@@ -1,328 +1,651 @@
-/* ========== PORTFOLIO HEADER - Mobile First ========== */
 .portfolio-header {
-  position: relative;
-  background: var(--color-pink-bg);
-}
-
-.portfolio-header__bg {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-
-.portfolio-header__bg-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-}
-
-.portfolio-header__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(200, 100, 130, 0.3);
-  mix-blend-mode: multiply;
+  min-height: auto;
+  padding: clamp(8.5rem, 13vw, 12rem) var(--section-padding) 0;
+  background: var(--color-cream);
+  color: var(--color-burgundy);
 }
 
 .portfolio-header__content {
-  position: relative;
-  z-index: 10;
-  text-align: center;
+  width: min(100%, 1220px);
+  margin: 0 auto;
+}
+
+.page-kicker,
+.project-block__type,
+.portfolio-intro__eyebrow,
+.perfume-project__index,
+.perfume-project__eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.page-kicker {
+  color: var(--color-cream);
 }
 
 .portfolio-header__title {
-  font-family: var(--font-handwriting);
-  font-size: clamp(3rem, 8vw, 6rem);
-  font-weight: 1000;
-  color: var(--color-cream);
-  text-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+  max-width: 1100px;
+  margin: 0;
+  color: var(--color-pink);
+  font-family: var(--font-heading);
+  font-size: clamp(4.4rem, 10vw, 8.2rem);
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
 }
 
-/* ========== PORTFOLIO DETAILS - Mobile First ========== */
+.portfolio-header__rule {
+  width: 100%;
+  height: 1px;
+  margin-top: clamp(0.6rem, 1.3vw, 1rem);
+  background: rgba(100, 4, 27, 0.17);
+}
+
+.page-scroll-link,
+.project-block__reel-link {
+  display: inline-flex;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid currentColor;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.page-scroll-link {
+  color: var(--color-cream);
+}
+
 .portfolio-details {
-  background: var(--color-cream);
-  color: var(--color-text-dark);
-  align-items: flex-start;
   min-height: auto;
-  height: auto;
-  padding: 3rem 0;
+  padding: 0 var(--section-padding) clamp(6rem, 13vw, 12rem);
+  background: var(--color-cream);
+  color: var(--color-burgundy);
+  scroll-margin-top: 0;
 }
 
 .portfolio-details__container {
-  width: 100%;
-  padding: 2rem 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  width: min(100%, 1320px);
+  margin: 0 auto;
 }
 
-/* Project blocks - Mobile first */
+.portfolio-intro {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(1rem, 2.4vw, 2rem);
+  padding-bottom: clamp(6rem, 13vw, 11rem);
+}
+
+.portfolio-intro__eyebrow {
+  grid-column: 1 / 4;
+  color: rgba(100, 4, 27, 0.68);
+}
+
+.portfolio-intro__title {
+  grid-column: 4 / 12;
+  max-width: 920px;
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5.8vw, 5.4rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.portfolio-intro__copy {
+  grid-column: 8 / 12;
+  margin-top: clamp(1rem, 3vw, 2.5rem);
+  font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+  line-height: 1.65;
+}
+
 .project-block {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(1rem, 2.4vw, 2rem);
+  row-gap: clamp(2rem, 5vw, 4.5rem);
+  padding: clamp(5rem, 11vw, 10rem) 0;
+  border-top: 1px solid rgba(100, 4, 27, 0.2);
+}
+
+.portfolio-details__container > .project-block:first-of-type {
+  border-top: 0;
+}
+
+.project-block__number {
+  grid-column: 1 / 2;
+  padding-top: 0.35rem;
+  color: rgba(100, 4, 27, 0.55);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+}
+
+.project-block__heading {
+  grid-column: 3 / 11;
+}
+
+.project-block__type {
+  margin-bottom: 1rem;
+  color: rgba(100, 4, 27, 0.62);
 }
 
 .project-block__title {
-  font-family: var(--font-handwriting);
-  font-size: clamp(1.1rem, 4vw, 1.8rem);
-  font-weight: 500;
+  max-width: 1000px;
   color: var(--color-burgundy);
-  line-height: 1.3;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 1px;
-  text-align: center;
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4.5vw, 4.3rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.03;
 }
 
-/* Mobile: stacked layout */
-.project-block__content {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  text-align: center;
+.project-block__visual {
+  min-width: 0;
 }
 
-.project-block__images {
-  flex-shrink: 0;
+.project-block__visual figure {
+  margin: 0;
+}
+
+.project-img,
+.perfume-shot img {
+  display: block;
   width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.project-block__images--row {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.project-block__images--grid {
-  display: flex;
-  flex-direction: row;
-  gap: 0.5rem;
-  justify-content: center;
-}
-
-.project-img {
-  width: auto;
-  max-width: 140px;
-  height: auto;
-  border-radius: 6px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.project-img--small {
-  width: 90px;
-  max-width: 90px;
-  height: auto;
+  height: 100%;
+  border-radius: 0;
   object-fit: cover;
+  transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.project-img--large {
-  width: 100%;
-  max-width: 250px;
+.project-block__visual figure,
+.project-block__visual--feature,
+.project-block__visual--wide,
+.perfume-shot {
+  overflow: hidden;
+}
+
+.project-block__visual figure:hover .project-img,
+.project-block__visual--feature:hover .project-img,
+.project-block__visual--wide:hover .project-img,
+.perfume-shot:hover img {
+  transform: scale(1.025);
 }
 
 .project-block__description {
-  font-size: clamp(0.8rem, 3vw, 0.95rem);
-  line-height: 1.6;
+  align-self: end;
   color: var(--color-burgundy);
-  opacity: 0.85;
+  font-size: clamp(0.92rem, 1.25vw, 1.08rem);
   font-style: italic;
+  line-height: 1.7;
 }
 
-.project-block__link {
-  margin-top: 0.3rem;
+.project-block--feature .project-block__visual {
+  grid-column: 1 / 9;
+  aspect-ratio: 4 / 3;
 }
 
-.project-block__link a {
-  font-size: 0.8rem;
-  color: var(--color-burgundy);
-  text-decoration: underline;
-  transition: opacity 0.3s ease;
+.project-block--feature .project-block__description {
+  grid-column: 10 / 13;
+  padding-bottom: 1rem;
 }
 
-.project-block__link a:hover {
-  opacity: 0.7;
+.project-block--duo .project-block__heading {
+  grid-column: 2 / 10;
 }
 
-/* Reel section avec téléphone */
-.project-block__reel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-  margin-top: 0.5rem;
+.project-block--duo .project-block__visual {
+  display: grid;
+  grid-column: 2 / 13;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(1rem, 2.4vw, 2rem);
+  align-items: start;
 }
 
-.project-block__phone {
-  display: none;
+.project-block--duo .project-block__visual figure:first-child {
+  grid-column: 1 / 6;
+  aspect-ratio: 3 / 4;
 }
 
-.project-block__phone .iphone-mockup {
-  transform: scale(0.5);
-  transform-origin: top center;
+.project-block--duo .project-block__visual figure:last-child {
+  grid-column: 7 / 13;
+  margin-top: clamp(4rem, 12vw, 11rem);
+  aspect-ratio: 4 / 5;
 }
 
-.project-block__phone .iphone-mockup__frame {
-  rotate: 0deg !important;
-  left: 0 !important;
+.project-block--duo .project-block__description {
+  grid-column: 2 / 6;
+  margin-top: calc(clamp(4rem, 12vw, 11rem) * -0.45);
 }
 
-.project-block__arrow {
-  display: none;
+.project-block--wide .project-block__heading {
+  grid-column: 4 / 12;
 }
 
+.project-block--wide .project-block__visual {
+  grid-column: 1 / 13;
+  aspect-ratio: 16 / 8.5;
+}
+
+.project-block--wide .project-block__visual .project-img {
+  object-position: center;
+}
+
+.project-block--wide .project-block__description {
+  grid-column: 8 / 12;
+}
+
+.project-block--social .project-block__heading {
+  grid-column: 2 / 11;
+}
+
+.project-block--social .project-block__visual {
+  display: grid;
+  grid-column: 1 / 13;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(0.85rem, 2.4vw, 2rem);
+  align-items: start;
+}
+
+.project-block--social .project-block__visual figure:nth-child(1) {
+  grid-column: 1 / 5;
+  margin-top: clamp(4rem, 10vw, 9rem);
+  aspect-ratio: 4 / 5;
+}
+
+.project-block--social .project-block__visual figure:nth-child(2) {
+  grid-column: 5 / 9;
+  aspect-ratio: 4 / 5;
+}
+
+.project-block--social .project-block__visual figure:nth-child(3) {
+  grid-column: 9 / 13;
+  margin-top: clamp(7rem, 16vw, 15rem);
+  aspect-ratio: 4 / 5;
+}
+
+.project-block--social .project-block__description {
+  grid-column: 5 / 9;
+  margin-top: calc(clamp(7rem, 16vw, 15rem) * -0.6);
+  font-style: normal;
+}
+
+.project-block__description--link p {
+  margin-bottom: 1.4rem;
+  font-size: inherit;
+}
 
 .project-block__reel-link {
-  font-family: var(--font-handwriting);
-  font-size: clamp(1rem, 3vw, 1.3rem);
   color: var(--color-burgundy);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: opacity 0.3s ease;
 }
 
-.project-block__reel-link:hover {
-  opacity: 0.7;
+.perfume-project {
+  padding-top: clamp(6rem, 14vw, 13rem);
+  border-top: 1px solid rgba(100, 4, 27, 0.2);
 }
 
-/* ========== Tablet ========== */
-@media (min-width: 600px) {
-  .portfolio-details__container {
-    gap: 3rem;
-    padding: clamp(2rem, 4vw, 4rem);
+.perfume-project__opening,
+.perfume-gallery {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(1rem, 2.4vw, 2rem);
+}
+
+.perfume-project__opening {
+  align-items: center;
+}
+
+.perfume-project__intro {
+  grid-column: 1 / 5;
+  padding-right: clamp(0rem, 3vw, 2rem);
+}
+
+.perfume-project__index {
+  margin-bottom: clamp(3rem, 8vw, 7rem);
+  color: rgba(100, 4, 27, 0.55);
+}
+
+.perfume-project__eyebrow {
+  margin-bottom: 1rem;
+  color: rgba(100, 4, 27, 0.68);
+}
+
+.perfume-project__title {
+  color: var(--color-burgundy);
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 6.2vw, 6rem);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.perfume-project__copy {
+  max-width: 390px;
+  margin-top: 1.8rem;
+  font-size: clamp(0.95rem, 1.25vw, 1.08rem);
+  line-height: 1.7;
+}
+
+.perfume-shot--opening {
+  grid-column: 6 / 13;
+  aspect-ratio: 4 / 5;
+}
+
+.perfume-shot figcaption {
+  margin-top: 0.75rem;
+  color: rgba(100, 4, 27, 0.72);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.perfume-gallery {
+  padding-top: clamp(6rem, 14vw, 13rem);
+  align-items: start;
+}
+
+.perfume-shot--pink {
+  grid-column: 1 / 6;
+  aspect-ratio: 3 / 4;
+}
+
+.perfume-shot--sky {
+  grid-column: 8 / 13;
+  margin-top: clamp(5rem, 12vw, 11rem);
+  aspect-ratio: 3 / 4;
+}
+
+.perfume-shot--table {
+  grid-column: 3 / 11;
+  margin-top: clamp(7rem, 16vw, 15rem);
+  aspect-ratio: 16 / 10;
+}
+
+.perfume-shot--fabric {
+  grid-column: 1 / 5;
+  margin-top: clamp(8rem, 18vw, 17rem);
+  aspect-ratio: 3 / 5;
+}
+
+.perfume-shot--coast {
+  grid-column: 5 / 9;
+  margin-top: clamp(3rem, 8vw, 7rem);
+  aspect-ratio: 3 / 4;
+}
+
+.perfume-shot--portrait {
+  grid-column: 9 / 13;
+  margin-top: clamp(11rem, 25vw, 23rem);
+  aspect-ratio: 3 / 5;
+}
+
+.perfume-shot--closing {
+  grid-column: 2 / 12;
+  margin-top: clamp(8rem, 19vw, 18rem);
+  aspect-ratio: 16 / 10;
+}
+
+@media (max-width: 900px) {
+  .portfolio-intro__eyebrow {
+    grid-column: 1 / 4;
   }
-  
+
+  .portfolio-intro__title {
+    grid-column: 4 / 13;
+  }
+
+  .portfolio-intro__copy {
+    grid-column: 6 / 13;
+  }
+
+  .project-block__heading,
+  .project-block--duo .project-block__heading,
+  .project-block--wide .project-block__heading,
+  .project-block--social .project-block__heading {
+    grid-column: 2 / 13;
+  }
+
+  .project-block--feature .project-block__visual {
+    grid-column: 1 / 10;
+  }
+
+  .project-block--feature .project-block__description {
+    grid-column: 10 / 13;
+  }
+
+  .perfume-project__intro {
+    grid-column: 1 / 6;
+  }
+
+  .perfume-shot--opening {
+    grid-column: 6 / 13;
+  }
+}
+
+@media (max-width: 680px) {
+  .portfolio-header {
+    min-height: auto;
+    padding-top: 7.5rem;
+  }
+
+  .portfolio-header__title {
+    max-width: 9ch;
+    font-size: clamp(3.5rem, 16vw, 5.2rem);
+    line-height: 0.92;
+  }
+
+  .portfolio-intro,
+  .project-block,
+  .perfume-project__opening,
+  .perfume-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-intro {
+    gap: 1.4rem;
+  }
+
+  .portfolio-intro__eyebrow,
+  .portfolio-intro__title,
+  .portfolio-intro__copy,
+  .project-block__number,
+  .project-block__heading,
+  .project-block--duo .project-block__heading,
+  .project-block--wide .project-block__heading,
+  .project-block--social .project-block__heading,
+  .project-block--feature .project-block__visual,
+  .project-block--feature .project-block__description,
+  .project-block--duo .project-block__visual,
+  .project-block--duo .project-block__description,
+  .project-block--wide .project-block__visual,
+  .project-block--wide .project-block__description,
+  .project-block--social .project-block__visual,
+  .project-block--social .project-block__description,
+  .perfume-project__intro,
+  .perfume-shot--opening,
+  .perfume-shot--pink,
+  .perfume-shot--sky,
+  .perfume-shot--table,
+  .perfume-shot--fabric,
+  .perfume-shot--coast,
+  .perfume-shot--portrait,
+  .perfume-shot--closing {
+    grid-column: 1;
+  }
+
   .project-block {
-    gap: 1.25rem;
+    row-gap: 1.5rem;
   }
-  
-  .project-block__images--grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-  }
-  
-  .project-img {
-    max-width: 120px;
-  }
-  
-  .project-img--small {
-    max-width: 85px;
-  }
-}
 
-/* ========== Desktop ========== */
-@media (min-width: 769px) {
-  .portfolio-details__container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: clamp(3rem, 5vw, 5rem) clamp(10rem, 20vw, 20rem);
-    gap: 5rem;
+  .project-block__number {
+    margin-bottom: 0.5rem;
   }
-  
-  .project-block {
-    gap: 1.5rem;
-  }
-  
+
   .project-block__title {
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    text-align: left;
+    font-size: clamp(1.9rem, 9vw, 3rem);
   }
-  
-  .project-block__content {
+
+  .project-block--feature .project-block__visual,
+  .project-block--wide .project-block__visual {
+    aspect-ratio: 4 / 3;
+  }
+
+  .project-block--feature .project-block__description,
+  .project-block--duo .project-block__description,
+  .project-block--wide .project-block__description,
+  .project-block--social .project-block__description {
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .project-block--duo .project-block__visual,
+  .project-block--social .project-block__visual {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.8rem;
+  }
+
+  .project-block--duo .project-block__visual figure:first-child,
+  .project-block--duo .project-block__visual figure:last-child {
+    grid-column: auto;
+    margin-top: 0;
+    aspect-ratio: 3 / 4;
+  }
+
+  .project-block--social .project-block__visual figure:nth-child(1),
+  .project-block--social .project-block__visual figure:nth-child(2),
+  .project-block--social .project-block__visual figure:nth-child(3) {
+    grid-column: auto;
+    margin-top: 0;
+    aspect-ratio: 4 / 5;
+  }
+
+  .project-block--social .project-block__visual figure:nth-child(3) {
+    grid-column: 1 / 3;
+    width: calc(50% - 0.4rem);
+    margin-left: auto;
+  }
+
+  .perfume-project__opening {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 15.5rem;
-    align-items: start;
-    text-align: left;
-  }
-  
-  .project-block__images {
-    width: auto;
-    flex-shrink: 0;
-    display: block;
-  }
-  
-  .project-block__images--row {
-    display: flex;
-    flex-direction: row;
-    gap: 1.5rem;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-  }
-  
-  .project-block__images--grid {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    max-width: none;
-  }
-  
-  .project-img {
-    width: 350px;
-    max-width: none;
-    height: auto;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  }
-  
-  .project-img--small {
-    width: 180px;
-    max-width: 180px;
-    height: auto;
-    object-fit: cover;
-  }
-  
-  .project-img--large {
-    width: 750px;
-    max-width: none;
-  }
-  
-  .project-block__description {
-    font-size: clamp(1rem, 1.3vw, 1.15rem);
-    max-width: 800px;
-    line-height: 1.7;
-    padding-top: 40%;
-    padding-left: 10%;
-  }
-  
-  .project-block__link a {
-    font-size: 1rem;
-  }
-  
-  .project-block__link {
-    margin-top: 0.5rem;
-  }
-  
-  .project-block__reel {
-    align-items: flex-start;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: 0;
+    align-items: start;
+  }
+
+  .perfume-project__intro {
+    display: grid;
+    grid-column: 1 / 13;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    padding-right: 0;
+  }
+
+  .perfume-project__index {
+    grid-column: 1 / 13;
+    margin-bottom: clamp(3.5rem, 18vw, 5rem);
+  }
+
+  .perfume-project__eyebrow {
+    grid-column: 1 / 13;
+  }
+
+  .perfume-project__title {
+    grid-column: 1 / 12;
+    font-size: clamp(3.35rem, 17vw, 4.75rem);
+    line-height: 0.92;
+  }
+
+  .perfume-project__copy {
+    grid-column: 1 / 11;
+    max-width: 24rem;
+    margin-top: 1.6rem;
+    font-size: clamp(0.93rem, 4.1vw, 1.05rem);
+    line-height: 1.65;
+  }
+
+  .perfume-shot--opening {
+    grid-column: 2 / 13;
+    width: 100%;
+    margin-top: clamp(2.75rem, 13vw, 4rem);
+    aspect-ratio: 4 / 5;
+  }
+
+  .perfume-gallery {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: clamp(0.45rem, 2.4vw, 0.75rem);
+    row-gap: clamp(4.5rem, 20vw, 6.5rem);
+    padding-top: clamp(4rem, 18vw, 7rem);
+    align-items: start;
+  }
+
+  .perfume-shot--pink,
+  .perfume-shot--sky,
+  .perfume-shot--table,
+  .perfume-shot--fabric,
+  .perfume-shot--coast,
+  .perfume-shot--portrait,
+  .perfume-shot--closing {
+    width: 100%;
     margin-top: 0;
   }
-  
-  .project-block__phone {
-    display: flex;
-    margin-bottom: -250px;
-    justify-content: flex-start;
+
+  .perfume-shot--pink {
+    grid-column: 1 / 6;
+    grid-row: 1;
+    width: 100%;
   }
-  
-  .project-block__phone .iphone-mockup {
-    transform: scale(0.6);
-    transform-origin: top left;
+
+  .perfume-shot--sky {
+    grid-column: 8 / 13;
+    grid-row: 1;
+    width: 100%;
+    margin-top: clamp(3rem, 15vw, 4.5rem);
   }
-  
-  .project-block__arrow {
-    display: block;
-    font-size: 2rem;
-    color: var(--color-burgundy);
-    margin-left: 70px;
-    margin-bottom: 0;
+
+  .perfume-shot--table {
+    grid-column: 2 / 12;
+    grid-row: 2;
+    width: 100%;
   }
-  
-  .project-block__reel-link {
-    font-size: 1.2rem;
-    margin-top: 30px;
+
+  .perfume-shot--fabric {
+    grid-column: 1 / 5;
+    grid-row: 3;
+    width: 100%;
+    margin-top: clamp(2.75rem, 13vw, 4rem);
+  }
+
+  .perfume-shot--coast {
+    grid-column: 5 / 9;
+    grid-row: 3;
+    width: 100%;
+  }
+
+  .perfume-shot--portrait {
+    grid-column: 9 / 13;
+    grid-row: 3;
+    width: 100%;
+    margin-top: clamp(2.75rem, 13vw, 4rem);
+  }
+
+  .perfume-shot--closing {
+    grid-column: 2 / 12;
+    grid-row: 4;
+    width: 100%;
+  }
+
+  .perfume-shot--table,
+  .perfume-shot--closing {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-img,
+  .perfume-shot img {
+    transition: none;
   }
 }

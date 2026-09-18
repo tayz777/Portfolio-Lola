@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Hibernate Two';
+  src: local('Hibernate Two'), local('Hibernate2');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
 /* ========== Reset et base - Mobile First ========== */
 *,
 *::before,
@@ -25,8 +33,10 @@
   --color-text-light: #faf5ef;
   
   /* Typography */
-  --font-handwriting: 'Caveat', cursive;
+  --font-handwriting: 'Hibernate Two', 'Hibernate2', 'Caveat', cursive;
+  --font-display: var(--font-handwriting);
   --font-body: 'Outfit', system-ui, sans-serif;
+  --font-heading: 'Poppins', var(--font-body);
   
   /* Spacing - Mobile first */
   --section-padding: clamp(1.5rem, 5vw, 6rem);
@@ -38,7 +48,7 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: #1a1412;
+  background: var(--color-burgundy);
   color: var(--color-text-light);
   line-height: 1.6;
   overflow-x: hidden;
@@ -46,9 +56,19 @@ body {
   padding: 0;
 }
 
-/* Container pour les sections fullpage avec superposition */
-.portfolio-container {
-  position: relative;
+::selection {
+  background: var(--color-pink);
+  color: var(--color-burgundy);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-pink);
+  outline-offset: 5px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Section fullpage de base - Mobile first */
@@ -59,33 +79,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Sections avec contenu long - pas de centrage vertical */
-.section.services-details,
-.section.portfolio-details {
-  align-items: flex-start;
-  min-height: auto;
-  padding-top: 10;
-  padding-bottom: 0;
-}
-
-/* Ombre portée pour effet de profondeur sur les sections */
-.section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.25), transparent);
-  pointer-events: none;
-  opacity: 0;
-  z-index: 100;
-}
-
-.section-card-container:not(:first-child) .section::before {
-  opacity: 1;
 }
 
 /* Typographie - Mobile first */
@@ -106,7 +99,9 @@ h2 {
 }
 
 h3 {
+  font-family: var(--font-heading);
   font-size: clamp(1.3rem, 4vw, 2.5rem);
+  font-weight: 700;
 }
 
 p {
@@ -166,11 +161,10 @@ p {
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-pink);
-  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-turquoise);
+  background: var(--color-cream);
 }
 
 /* ========== Tablet ========== */

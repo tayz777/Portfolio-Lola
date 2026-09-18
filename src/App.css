@@ -3,7 +3,8 @@
   min-height: 100vh;
 }
 
-.portfolio-container {
-  position: relative;
+main {
+  display: block;
+  width: 100%;
 }
 

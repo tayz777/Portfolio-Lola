@@ -49,7 +49,7 @@ export default function Services() {
           {/* Créations graphiques */}
           <div className="service-block service-block--graphic">
             <div className="service-block__content2">
-              <h3 className="service-block__title service-block__title--underline">Mes services</h3>
+              <h3 className="service-block__title service-block__title--underline">Tarifs</h3>
               <ul className="service-block__list">
                 <li>Flyers — <span>55 €</span></li>
                 <li>Grille tarifaire — <span>60 €</span></li>

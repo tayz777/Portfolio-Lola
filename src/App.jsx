@@ -1,35 +1,79 @@
-import SectionCard from './components/SectionCard'
+import { useEffect } from 'react'
 import Hero from './components/Hero'
+import Navbar from './components/Navbar'
 import ServicesDetails from './components/ServicesDetails'
 import PackSection from './components/PackSection'
 import PortfolioHeader from './components/PortfolioHeader'
 import PortfolioDetails from './components/PortfolioDetails'
-import Contact from './components/Contact'
+import ContactSection from './components/ContactSection'
 import './App.css'
 
-// Liste des sections pour le mapping
-// autoHeight: true pour les sections avec beaucoup de contenu
-const sections = [
-  { id: 'hero', Component: Hero },
-  { id: 'services-details', Component: ServicesDetails, autoHeight: true },
-  { id: 'pack', Component: PackSection },
-  { id: 'portfolio-header', Component: PortfolioHeader },
-  { id: 'portfolio-details', Component: PortfolioDetails, autoHeight: true },
-  { id: 'contact', Component: Contact },
-]
+const pageTitles = {
+  '/': 'Lola Facello | Communication & créations visuelles',
+  '/tarifs': 'Tarifs | Lola Facello',
+  '/projets': 'Projets | Lola Facello',
+  '/contact': 'Contact | Lola Facello',
+}
+
+function HomePage() {
+  return (
+    <main>
+      <Navbar showBrand={false} />
+      <Hero />
+    </main>
+  )
+}
+
+function ServicesPage() {
+  return (
+    <>
+      <Navbar tone="dark" />
+      <main>
+        <ServicesDetails />
+        <PackSection />
+      </main>
+    </>
+  )
+}
+
+function ProjectsPage() {
+  return (
+    <>
+      <Navbar tone="dark" />
+      <main>
+        <PortfolioHeader />
+        <PortfolioDetails />
+      </main>
+    </>
+  )
+}
+
+function ContactPage() {
+  return (
+    <>
+      <Navbar tone="dark" />
+      <main>
+        <ContactSection />
+      </main>
+    </>
+  )
+}
 
 function App() {
-  return (
-    <div className="app">
-      <main className="portfolio-container">
-        {sections.map((section) => (
-          <SectionCard key={section.id} autoHeight={section.autoHeight}>
-            <section.Component />
-          </SectionCard>
-        ))}
-      </main>
-    </div>
-  )
+  const path = window.location.pathname.replace(/\/$/, '') || '/'
+  document.title = pageTitles[path] || pageTitles['/']
+
+  useEffect(() => {
+    if (!window.location.hash) return
+
+    const target = document.getElementById(window.location.hash.slice(1))
+    target?.scrollIntoView({ behavior: 'instant', block: 'start' })
+  }, [path])
+
+  if (path === '/tarifs') return <ServicesPage />
+  if (path === '/projets') return <ProjectsPage />
+  if (path === '/contact') return <ContactPage />
+  return <HomePage />
 }
 
 export default App

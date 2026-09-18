@@ -1,86 +1,119 @@
 import './Portfolio.css'
-import IphoneMockup from './IphoneMockup'
+
+const perfumePhotos = [
+  {
+    src: '/img-parfum/IMG_4404.jpeg',
+    alt: 'Flacon de parfum posé sur un fond bleu profond',
+    className: 'perfume-shot--opening',
+  },
+  {
+    src: '/img-parfum/IMG_1827.jpeg',
+    alt: 'Détail d’un flacon de parfum sur un fond rose poudré',
+    className: 'perfume-shot--pink',
+  },
+  {
+    src: '/img-parfum/IMG_1875.jpeg',
+    alt: 'Flacon de parfum tenu à la main devant un ciel bleu',
+    className: 'perfume-shot--sky',
+  },
+  {
+    src: '/img-parfum/IMG_5595.jpeg',
+    alt: 'Composition de parfum et viennoiseries sur une table',
+    className: 'perfume-shot--table',
+  },
+  {
+    src: '/img-parfum/IMG_4335.jpeg',
+    alt: 'Flacon de parfum photographié sur un tissu rayé bleu',
+    className: 'perfume-shot--fabric',
+  },
+  {
+    src: '/img-parfum/IMG_5840.jpeg',
+    alt: 'Flacon de parfum tenu face à la mer au coucher du soleil',
+    className: 'perfume-shot--coast',
+  },
+  {
+    src: '/img-parfum/IMG_5848.jpeg',
+    alt: 'Portrait au bord de la mer avec un flacon de parfum',
+    className: 'perfume-shot--portrait',
+  },
+  {
+    src: '/img-parfum/IMG_5636.jpeg',
+    alt: 'Table de petit-déjeuner avec une sélection de parfums',
+    className: 'perfume-shot--closing',
+  },
+]
+
+function ProjectImage({ src, alt, className = '' }) {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={`project-img ${className}`}
+      loading="lazy"
+      decoding="async"
+    />
+  )
+}
 
 export default function PortfolioDetails() {
   return (
-    <div className="section portfolio-details">
+    <section id="projects-list" className="section portfolio-details">
       <div className="portfolio-details__container">
-        
-        {/* Projet 1 - Vigneron */}
-        <div className="project-block">
-          <h3 className="project-block__title">
-            Recommandation de feed<br/>
-            pour vigneron indépendant
-          </h3>
-          <div className="project-block__content">
-            <div className="project-block__images">
-              <img src="/img.jpg" alt="Feed vigneron" className="project-img" />
-            </div>
-            <p className="project-block__description">
-              Création de stratégie de contenu et organisation visuelle du feed.
-            </p>
+        <article className="project-block project-block--social">
+          <p className="project-block__number" aria-hidden="true"></p>
+          <div className="project-block__heading">
+            <p className="project-block__type">Photographie · Reels</p>
+            <h3 className="project-block__title">
+              Contenus réseaux Joseph, Cap 3000
+            </h3>
           </div>
-        </div>
-
-        {/* Projet 2 - Joseph Charte graphique */}
-        <div className="project-block">
-          <h3 className="project-block__title">
-            Réalisation d'une charte graphique estivale<br/>
-            et de ses cartes pour Joseph, Cap 3000
-          </h3>
-          <div className="project-block__content">
-            <div className="project-block__images project-block__images--row">
-              <img src="/pink-card.jpg" alt="Carte rose Joseph" className="project-img" />
-              <img src="/blue-cardjpg.jpg" alt="Carte bleue Joseph" className="project-img" />
-            </div>
-            <p className="project-block__description">
-              Création d'une identité visuelle estivale et conception des cartes 
-              pour la saison été.
-            </p>
+          <div className="project-block__visual project-block__visual--social">
+            <figure><ProjectImage src="/glacon.jpg" alt="Création photo pour Joseph" /></figure>
+            <figure><ProjectImage src="/thumbnail.png" alt="Couverture de contenu vidéo pour Joseph" /></figure>
+            <figure><ProjectImage src="/joseph.jpg" alt="Création social media pour Joseph" /></figure>
           </div>
-        </div>
-
-        {/* Projet 3 - Menus Joseph */}
-        <div className="project-block">
-          <h3 className="project-block__title">
-            Réalisation des menus plats et boissons du<br/>
-            restaurant Joseph, Cap 3000
-          </h3>
-          <div className="project-block__content">
-            <div className="project-block__images project-block__images--row">
-              <img src="/card-joseph.jpg" alt="Menu Joseph" className="project-img project-img--large" />
-            </div>
-            <p className="project-block__description">
-              Création graphique des menus pour une présentation claire et 
-              attractive des plats et boissons.
-            </p>
+          <div className="project-block__description project-block__description--link">
+            <p>Création de photos et de vidéos courtes pensées pour les réseaux sociaux.</p>
+            <a
+              href="https://www.instagram.com/p/DIB2H0hIxqo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-block__reel-link"
+            >
+              Voir le reel ↗
+            </a>
           </div>
-        </div>
+        </article>
 
-        {/* Projet 4 - Posts réseaux */}
-        <div className="project-block">
-          <h3 className="project-block__title">
-            Réalisation de posts (photos et vidéos reels)<br/>
-            pour les réseaux du restaurant Joseph, Cap 3000
-          </h3>
-          <div className="project-block__content">
-            <div className="project-block__images project-block__images--grid">
-              <img src="/glacon.jpg" alt="Post 1" className="project-img project-img--small" />
-              <img src="/thumbnail.png" alt="Post 2" className="project-img project-img--small" />
-              <img src="/joseph.jpg" alt="Post 3" className="project-img project-img--small" />
-            </div>
-            <div className="project-block__reel">
-              <div className="project-block__phone">
-                <IphoneMockup src="/joseph.jpg" alt="Reel Joseph" />
-              </div>
-              <a href="https://www.instagram.com/p/DIB2H0hIxqo/" target="_blank" rel="noopener noreferrer" className="project-block__reel-link">
-                Cliquez ici pour accéder au reel
-              </a>
-            </div>
+        <section className="perfume-project" aria-labelledby="perfume-project-title">
+          <div className="perfume-project__opening">
+            <header className="perfume-project__intro">
+              <p className="perfume-project__index"></p>
+              <p className="perfume-project__eyebrow">Direction artistique · Produit</p>
+              <h2 id="perfume-project-title" className="perfume-project__title">
+                Série parfum
+              </h2>
+              <p className="perfume-project__copy">
+                Une série lumineuse pensée comme une campagne éditoriale : packshots,
+                détails, art de vivre et mises en situation.
+              </p>
+            </header>
+
+            <figure className={`perfume-shot ${perfumePhotos[0].className}`}>
+              <img src={perfumePhotos[0].src} alt={perfumePhotos[0].alt} loading="lazy" decoding="async" />
+              <figcaption>Couleur, matière et lumière.</figcaption>
+            </figure>
           </div>
-        </div>
 
+          <div className="perfume-gallery">
+            {perfumePhotos.slice(1).map((photo) => (
+              <figure className={`perfume-shot ${photo.className}`} key={photo.src}>
+                <img src={photo.src} alt={photo.alt} loading="lazy" decoding="async" />
+              </figure>
+            ))}
+          </div>
+        </section>
       </div>
-    </div>
+    </section>
   )
 }
